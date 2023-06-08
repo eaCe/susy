@@ -16,7 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name')->unique();
             $table->text('label');
-            $table->text('description');
+            $table->text('description')->nullable();
+            $table->integer('points')->default(0);
         });
     }
 
