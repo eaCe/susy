@@ -20,7 +20,7 @@ class ActivityCompleted extends PointType
      */
     public function __construct($subject)
     {
-        $this->subject = $subject;
+        $this->subject = $subject->id;
     }
 
     /**

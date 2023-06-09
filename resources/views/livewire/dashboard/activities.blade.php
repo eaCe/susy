@@ -26,14 +26,7 @@
         @if($activityTypes->count() > 0)
             @foreach($activityTypes as $activityType)
                 <div class="w-full md:w-6/12 lg:w-4/12 px-3 mt-6">
-                    <button class="block text-left rounded-lg shadow-lg p-4 border hover:scale-105 focus-visible:scale-105 hover:border-lime-300 focus-visible:border-lime-300 transition-all">
-                    <span class="block font-bold text-lg mb-2">
-                        {!! $activityType->label !!}
-                    </span>
-                        <span class="block">
-                        {!! $activityType->description !!}
-                    </span>
-                    </button>
+                    <x-activity.button-card :activityType="$activityType"/>
                 </div>
             @endforeach
         @else

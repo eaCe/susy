@@ -7,13 +7,6 @@ use QCod\Gamify\PointType;
 class ActivityCreated extends PointType
 {
     /**
-     * Number of points
-     *
-     * @var int
-     */
-    public $points = 5;
-
-    /**
      * Point constructor
      *
      * @param $subject
@@ -31,5 +24,16 @@ class ActivityCreated extends PointType
     public function payee()
     {
         return $this->getSubject()->user;
+    }
+
+    /**
+     * Number of points
+     *
+     * @return float|int
+     * @throws \QCod\Gamify\Exceptions\PointSubjectNotSet
+     */
+    public function getPoints()
+    {
+        return $this->getSubject()->getPoints() ?? 5;
     }
 }
