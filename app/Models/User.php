@@ -44,7 +44,30 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    /**
+     * Get the activities for the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function activities() {
         return $this->hasMany(Activity::class);
+    }
+
+    /**
+     * Get the activities for the user with the activity type.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function activitiesWithTypes()
+    {
+        return $this->activities()->with([
+            'type' => function ($query)
+            {
+                return $query->select([
+                    'id',
+                    'label',
+                ]);
+            }
+        ]);
     }
 }
