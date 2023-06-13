@@ -38,6 +38,24 @@ class ActivityType extends Seeder
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl',
                 'points' => '15'
             ],
+            [
+                'name' => 'repair',
+                'label' => 'Reparieren statt neu',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl',
+                'points' => '15'
+            ],
+            [
+                'name' => 'used',
+                'label' => 'Gebraucht statt neu',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl',
+                'points' => '15'
+            ],
+            [
+                'name' => 'veggie',
+                'label' => 'Pflanzlich statt Fleisch',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl',
+                'points' => '15'
+            ],
         ];
 
         foreach ($activityTypes as $activityType) {
