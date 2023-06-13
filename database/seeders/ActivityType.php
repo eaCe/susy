@@ -41,7 +41,7 @@ class ActivityType extends Seeder
         ];
 
         foreach ($activityTypes as $activityType) {
-            DB::table('activity_types')->insert($activityType);
+            DB::table('activity_types')->insertOrIgnore($activityType);
         }
     }
 }
