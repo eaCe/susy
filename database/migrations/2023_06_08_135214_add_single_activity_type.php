@@ -11,8 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('activity_types', function (Blueprint $table)
-        {
+        Schema::table('activity_types', function (Blueprint $table) {
             $table->boolean('single')->default(false);
         });
     }
@@ -22,8 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('activity_types', function (Blueprint $table)
-        {
+        Schema::table('activity_types', function (Blueprint $table) {
             $table->dropColumn('single');
         });
     }

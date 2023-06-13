@@ -14,15 +14,18 @@ class Activity extends Model
         'user_id',
     ];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function type() {
+    public function type()
+    {
         return $this->hasOne(ActivityType::class, 'id', 'activity_type_id');
     }
 
-    public function getPoints() {
+    public function getPoints()
+    {
         return $this->type->points ?? 0;
     }
 }

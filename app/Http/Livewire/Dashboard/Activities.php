@@ -10,11 +10,12 @@ use Livewire\Component;
 class Activities extends Component
 {
     public $page = 1;
+
     public $search = '';
 
     public function addActivity(int $activityTypeId)
     {
-        if (!ActivityType::query()->where('id', $activityTypeId)->exists()) {
+        if (! ActivityType::query()->where('id', $activityTypeId)->exists()) {
             return;
         }
 

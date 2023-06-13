@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AuthenticatedSessionController::class, 'create'])
     ->name('login');
 
-
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');

@@ -49,7 +49,8 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function activities() {
+    public function activities()
+    {
         return $this->hasMany(Activity::class);
     }
 
@@ -61,13 +62,12 @@ class User extends Authenticatable
     public function activitiesWithTypes()
     {
         return $this->activities()->with([
-            'type' => function ($query)
-            {
+            'type' => function ($query) {
                 return $query->select([
                     'id',
                     'label',
                 ]);
-            }
+            },
         ]);
     }
 }

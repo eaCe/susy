@@ -8,8 +8,6 @@ class ActivityCreated extends PointType
 {
     /**
      * Point constructor
-     *
-     * @param $subject
      */
     public function __construct($subject)
     {
@@ -30,6 +28,7 @@ class ActivityCreated extends PointType
      * Number of points
      *
      * @return float|int
+     *
      * @throws \QCod\Gamify\Exceptions\PointSubjectNotSet
      */
     public function getPoints()
