@@ -45,6 +45,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * Delete all activities for the user if the user is deleted.
+     */
+    public static function boot(): void
+    {
+        static::deleting(function ($user) {
+            $user->activities()->delete();
+        });
+    }
+
+    /**
      * Get the activities for the user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
