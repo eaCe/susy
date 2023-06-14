@@ -70,4 +70,14 @@ class User extends Authenticatable
             },
         ]);
     }
+
+    /**
+     * Get the activities for the user with the activity type, grouped by type.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function groupedActivities()
+    {
+        return $this->activitiesWithTypes()->get()->groupBy('activity_type_id');
+    }
 }
