@@ -9,6 +9,9 @@ class ActivityType extends Model
 {
     use HasFactory;
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function activities()
     {
         return $this->belongsToMany(Activity::class);

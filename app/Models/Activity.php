@@ -14,16 +14,25 @@ class Activity extends Model
         'user_id',
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function type()
     {
         return $this->hasOne(ActivityType::class, 'id', 'activity_type_id');
     }
 
+    /**
+     * @return int
+     */
     public function getPoints()
     {
         return $this->type->points ?? 0;
