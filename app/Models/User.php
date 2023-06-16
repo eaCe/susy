@@ -49,6 +49,8 @@ class User extends Authenticatable
      */
     public static function boot(): void
     {
+        parent::boot();
+
         static::deleting(function ($user) {
             $user->activities()->delete();
         });
