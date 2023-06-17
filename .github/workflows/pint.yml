@@ -31,7 +31,7 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       # run laravel pint
-      - name: Run PHP CS Fixer
+      - name: Run Pint
         run: ./vendor/bin/pint
 
       # commit and push fixed files
