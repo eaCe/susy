@@ -39,6 +39,6 @@ jobs:
 
       # run pest tests
       - name: Run Pest PHP Tests
-        run: php partisan test
+        run: php artisan test
         env:
           APP_ENV: testing
