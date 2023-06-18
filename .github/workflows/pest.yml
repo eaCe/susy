@@ -1,0 +1,44 @@
+name: Pest PHP Tests
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+permissions:
+  contents: read
+
+jobs:
+  code-style:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # for Git to git apply
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: gd, intl, pdo_mysql
+          coverage: none # disable xdebug, pcov
+
+      # install dependencies from composer.json
+      - name: Install test dependencies
+        run: composer install --prefer-dist --no-progress
+        env:
+          APP_ENV: testing
+
+      - name: Prepare Laravel Application
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      # run pest tests
+      - name: Run Pest PHP Tests
+        run: php partisan test
+        env:
+          APP_ENV: testing
