@@ -34,8 +34,6 @@ jobs:
       # install dependencies from composer.json
       - name: Install test dependencies
         run: composer install --prefer-dist --no-progress
-        env:
-          APP_ENV: testing
 
       - name: Prepare Laravel Application
         run: |
@@ -51,5 +49,3 @@ jobs:
       # run pest tests
       - name: Run Pest PHP Tests
         run: php artisan test
-        env:
-          APP_ENV: testing
