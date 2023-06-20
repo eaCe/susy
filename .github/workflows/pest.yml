@@ -35,6 +35,17 @@ jobs:
       - name: Install test dependencies
         run: composer install --prefer-dist --no-progress
 
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      # install dependencies from package.json
+      - name: Install test dependencies
+        run: npm install
+
       - name: Prepare Laravel Application
         run: |
           cp .env.example .env
