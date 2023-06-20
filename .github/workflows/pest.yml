@@ -46,6 +46,10 @@ jobs:
       - name: Install test dependencies
         run: npm install
 
+      # build assets
+      - name: Build assets
+        run: npm run build
+
       - name: Prepare Laravel Application
         run: |
           cp .env.example .env
