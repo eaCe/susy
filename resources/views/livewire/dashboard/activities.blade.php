@@ -6,7 +6,7 @@
                     Suche nach Aktivitäten
                 </p>
                 <input type="text"
-                       wire:model="search"
+                       wire:model.live="search"
                        class="w-full rounded-lg p-3 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-lime-300 focus:border-lime-300 transition-all"
                        placeholder="Aktivitäten suchen...">
             </label>
